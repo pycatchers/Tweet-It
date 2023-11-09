@@ -14,7 +14,7 @@ function TweetContainer(){
       <div style={{ display: 'flex' }}>
         <UserIcon className="child1"/>
         <div className="child2">
-            <div className="row1" style={{ display: 'flex' }}>
+            <div className="row1" style={{ display: 'flex', marginBottom: 10 }}>
                 <UserName />
                 <MoreIcon />
             </div>
@@ -22,7 +22,7 @@ function TweetContainer(){
 
             <Tweet className="row2"/>
 
-            <div className="row3">
+            <div className="row3" style={{display: 'flex', width: '25vw', justifyContent: 'space-between'}}>
                 <Comments />
                 <Retweet />
                 <Likes />

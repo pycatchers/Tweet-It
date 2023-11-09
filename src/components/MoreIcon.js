@@ -1,6 +1,9 @@
+import { FiMoreHorizontal } from "react-icons/fi"
+
+
 function MoreIcon(){
     return(
-      <div>I am MoreIcon</div>
+        <FiMoreHorizontal style={{marginTop: 15}}/>
     )
   }
   
