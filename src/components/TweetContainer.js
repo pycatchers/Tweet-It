@@ -19,7 +19,6 @@ function TweetContainer(){
                 <MoreIcon />
             </div>
 
-
             <Tweet className="row2"/>
 
             <div className="row3" style={{display: 'flex', width: '25vw', justifyContent: 'space-between'}}>

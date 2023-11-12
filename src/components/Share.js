@@ -1,6 +1,11 @@
+import { BsShare } from 'react-icons/bs';
+
 function Share(){
     return(
-      <div>I am Share</div>
+      <div>
+        <BsShare />
+        11.7K
+      </div>
     )
   }
   
