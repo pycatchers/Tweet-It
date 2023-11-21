@@ -1,11 +1,13 @@
-import { useState } from 'react';
-import TweetContainer from './components/TweetContainer'
-import StudentsList from './components/StudentsList';
+function App() {
 
-function App(){
+  useRef - useState
 
-  return (
-    <TweetContainer />
+  const [value, setValue] = useState(0);
+
+  setValue(value + 1)
+
+  return(
+    <div>{value}</div>
   )
 }
 

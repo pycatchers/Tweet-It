@@ -1,6 +1,6 @@
 function Likes(){
     return(
-      <div>I am Likes</div>
+      <div>Likes</div>
     )
   }
   

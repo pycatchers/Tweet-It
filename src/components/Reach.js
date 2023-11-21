@@ -1,6 +1,6 @@
 function Reach(){
     return(
-      <div>I am Reach</div>
+      <div>Reach</div>
     )
   }
   
