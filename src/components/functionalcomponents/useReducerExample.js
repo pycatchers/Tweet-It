@@ -10,6 +10,8 @@ const reducer = (state, action) => {
   console.log('action received', action)
   switch (action.type) {
     case 'increment':
+      return { ...state, id: action.id} // update the state with new value
+    case 'decrement':
       return { ...state, id: action.id}
     case 'addpost':
       return { ...state, response: action.payload}
@@ -48,7 +50,10 @@ function UseReducerExample(){
   }
 
   const handleDecrement = () => {
-
+    console.log('handleDecrement')
+    dispatch(
+      {type: 'decrement', id: state.id - 1}
+      )
   }
 
   return (

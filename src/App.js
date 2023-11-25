@@ -1,14 +1,8 @@
+import { render } from '@testing-library/react';
+import Posts from './components/functionalcomponents/Posts';
+
 function App() {
-
-  useRef - useState
-
-  const [value, setValue] = useState(0);
-
-  setValue(value + 1)
-
-  return(
-    <div>{value}</div>
-  )
+  return <Posts />
 }
 
 
