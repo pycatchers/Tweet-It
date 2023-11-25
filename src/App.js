@@ -5,5 +5,4 @@ function App() {
   return <Posts />
 }
 
-
 export default App;
