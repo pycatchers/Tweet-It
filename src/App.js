@@ -1,19 +1,22 @@
-import Component from "react";
-import { useState } from "react";
-import TweetContainer from "./components/TweetContainer";
-import TweetContainerClass from "./classComponents/TweetContainerClass";
-//import StudentsList from './components/StudentsList';
+import { render } from '@testing-library/react';
+import Posts from './components/functionalcomponents/Posts';
+import UserContext from './components/functionalcomponents/userContext';
+import LoginForm from './components/functionalcomponents/LoginForm';
+
+const userData = {
+  userName: 'David',
+  email: 'david@abc.com',
+}
 
 function App() {
   return (
     <>
-      Functional Component TweetIt
-      <TweetContainer />
-      <br />
-      Class Component TweetIt
-      <TweetContainerClass />
+    <UserContext.Provider value={userData}>
+      <Posts />
+    </UserContext.Provider>
+    <LoginForm />
     </>
-  );
+  )
 }
 
 export default App;
