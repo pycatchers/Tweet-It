@@ -4,7 +4,6 @@ import UserContext from "./userContext";
 function UserInfo(){
 
     const userData = useContext(UserContext);
-    console.log('userData inside userdata', userData)
 
     return (
         <div>
