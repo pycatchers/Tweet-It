@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import PostsList from './PostsList';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 // useMemo
 // function Posts(){
@@ -46,6 +47,9 @@ function Posts() {
   const [value, setValue] = useState(0)
   const [bgColor, setBgColor] = useState('white');
   const [ searchText, setSearchText ] = useState('')
+  const location = useLocation()
+  const searchParams = new URLSearchParams(location.search)
+  console.log('location', location, searchParams.get('username'))
 
   // useEffect(() => {
   //   getAllPosts()
@@ -58,6 +62,7 @@ function Posts() {
 
   return (
     <>
+    <h1>{searchParams.get('username')}</h1>
     <button onClick={() => setValue(value + 1)}>Increment Value: {value}</button>
       <div>
         <input type='radio' name='theme' onChange={() => setBgColor('black')}/>

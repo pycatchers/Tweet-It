@@ -6,6 +6,7 @@ function HomePage() {
             HomePage
             <br />
             <Link to='/posts'>Go to Posts</Link>
+            <Link to='/login' style={{float: 'right', marginRight: 70}}>Login</Link>
         </div>
     )
 }
