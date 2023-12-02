@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import PostsList from './PostsList';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 // useMemo
 // function Posts(){
@@ -43,21 +44,26 @@ import axios from 'axios';
 
 function Posts() {
 
-  const [response, setResponse] = useState([]);
+  const [value, setValue] = useState(0)
   const [bgColor, setBgColor] = useState('white');
   const [ searchText, setSearchText ] = useState('')
+  const location = useLocation()
+  const searchParams = new URLSearchParams(location.search)
+  console.log('location', location, searchParams.get('username'))
 
-  useEffect(() => {
-    getAllPosts()
-  }, [])
+  // useEffect(() => {
+  //   getAllPosts()
+  // }, [])
 
-  const getAllPosts = () => {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => setResponse(response.data))
+  const getAllPosts = async () => {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    return response.data
   }
 
   return (
     <>
+    <h1>{searchParams.get('username')}</h1>
+    <button onClick={() => setValue(value + 1)}>Increment Value: {value}</button>
       <div>
         <input type='radio' name='theme' onChange={() => setBgColor('black')}/>
         <label>Dark</label>
@@ -65,7 +71,11 @@ function Posts() {
         <label>Light</label>
       </div>
       <input type='text' onChange={(event) => setSearchText(event.target.value)} />
-      <PostsList data={response} bgColor={bgColor} searchText={searchText} />
+      <PostsList 
+        bgColor={bgColor}
+        searchText={searchText}
+        getAllPosts={getAllPosts}
+      />
     </>
   )
 }
